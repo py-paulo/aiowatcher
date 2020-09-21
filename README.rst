@@ -28,28 +28,28 @@ AIOWatcher
     :target: https://img.shields.io/github/last-commit/py-paulo/aiowatcher
     :alt: GitHub last commit
 
-Biblioteca para "observar" os arquivos de um diretório e chamar uma 
-função de callback `(filename, lines)` toda vez que um dos arquivos monitorados for gravado, em tempo real.
+Library to "watch" files in a directory and call a
+callback function `(filename, lines)` every time one of the monitored files is recorded, in real time.
 
-Em termos práticos, isso pode ser comparado ao comando `tail -F * .log` do UNIX, 
-mas em vez de ter linhas impressas no stdout, uma função Python é chamada.
+In practical terms, this can be compared to UNIX's `tail -F * .log` command,
+but instead of having lines printed in stdout, a Python function is called.
 
-Da mesma forma que o tail, ele se encarrega de "observar" os novos arquivos que são 
-criados após a inicialização e "desbloquear" aqueles que são removidos nesse meio tempo. 
-Isso significa que você será capaz de "seguir" e suportar também arquivos de log rotativos.
+Like tail, it is in charge of "watching" new files that are
+created after startup and "unlock" those that are removed in the meantime.
+This means that you will be able to "follow" and support rotating log files as well.
 
 Key Features
 ============
 
-- Utiliza Asyncio para leitura e monitoramento assincrono.
-- A implementação escolhe automaticamente dependendo da compatibilidade do sistema.
-- Monitoramento de diversos arquivos em um mesmo diretório ou apenas de um.
-- Função `callback` assincrona.
+- Uses Asyncio for asynchronous reading and monitoring.
+- The implementation chooses automatically depending on the compatibility of the system.
+- Monitoring of several files in the same directory or just one.
+- Asynchronous callback function.
 
 Getting started
 ---------------
 
-Todos os exemplos de código requerem Python 3.6+.
+All code samples require Python 3.6+.
 
 Basic Usage
 +++++++++++
@@ -95,11 +95,11 @@ Non blocking
 License
 =======
 
-``aiowatcher`` é oferecido sob a licença Apache 2.
+``aiowatcher`` is offered under the Apache 2 license.
 
 
 Source code
 ===========
 
-A versão mais recente do desenvolvedor está disponível em um repositório GitHub:
+The latest version of the developer is available on a GitHub repository:
 https://github.com/py-paulo/aiowatcher.git
