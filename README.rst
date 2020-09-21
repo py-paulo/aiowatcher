@@ -1,5 +1,9 @@
-AIOWatch
-========
+AIOWatcher
+==========
+
+.. image:: https://img.shields.io/github/languages/code-size/py-paulo/aiowatcher   :alt: GitHub code size in bytes
+
+.. image:: https://img.shields.io/github/license/py-paulo/aiowatcher   :alt: GitHub
 
 Library to "watch" files in a directory and call a callback function (file name, lines) every time one of the files being monitored is recorded, in real time.
 
@@ -18,13 +22,13 @@ Basic Usage
 .. code-block:: python
 
     import asyncio
-    from aiowatch import AIOWatch
+    from aiowatcher import AIOWatcher
 
     async def callback(filename, line):
         print(line)
 
     async def main():
-        lw = AIOWatch('var', callback, extensions=['txt'])
+        lw = AIOWatcher('var', callback, extensions=['txt'])
         await lw.init()
         await lw.loop()
 
@@ -38,13 +42,13 @@ Non blocking
 .. code-block:: python
 
     import asyncio
-    from aiowatch import AIOWatch
+    from aiowatcher import AIOWatcher
 
     async def callback(filename, line):
         print(line)
 
     async def main():
-        lw = AIOWatch('var', callback, extensions=['txt'])
+        lw = AIOWatcher('var', callback, extensions=['txt'])
         while True:
             await lw.loop(blocking=False)
             await asyncio.sleep(0.1)

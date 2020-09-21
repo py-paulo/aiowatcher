@@ -6,29 +6,27 @@ from setuptools import setup
 
 
 module = SourceFileLoader(
-    fullname="version", path=path.join("aiowatch", "version.py"),
+    fullname="version", path=path.join("aiowatcher", "version.py"),
 ).load_module()
 
 libraries = []
 
 setuptools.setup(
-    name="aiowatch",
+    name="aiowatcher",
     version=module.__version__,
-    packages=["aiowatch"],
+    packages=["aiowatcher"],
     license=module.package_license,
     description=module.package_info,
     author=module.__author__,
     author_email=module.team_email,
     keywords=["aio", "python", "asyncio", "fileio", "io"],
-    provides=["aiowatch"],
+    provides=["aiowatcher"],
     long_description=open("README.rst").read(),
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/py-paulo/aiowatcher.git",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
     install_requires=["aiofile~=3.1.0"],
 )
-
