@@ -48,6 +48,10 @@ class AioWatcher(object):
         assert os.path.isdir(self.folder), self.folder
         assert callable(callback), repr(callback)
 
+    @classmethod
+    async def tail(cls, fname, window):
+        pass
+
     async def init(self) -> None:
         """update file status and add to file map
         """

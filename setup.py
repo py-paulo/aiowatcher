@@ -1,9 +1,17 @@
 import setuptools
 from importlib.machinery import SourceFileLoader
 from os import path
+import sys
+import pathlib
 
-from setuptools import setup
+from setuptools import setup, Extension
 
+
+if sys.version_info < (3, 6):
+    raise RuntimeError("aiohttp 4.x requires Python 3.6+")
+
+HERE = pathlib.Path(__file__).parent
+IS_GIT_REPO = (HERE / '.git').exists()
 
 module = SourceFileLoader(
     fullname="version", path=path.join("aiowatcher", "version.py"),
@@ -25,8 +33,18 @@ setuptools.setup(
     url="https://github.com/py-paulo/aiowatcher.git",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "Operating System :: OS Independent",
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Operating System :: POSIX',
+        'Operating System :: MacOS :: MacOS X',
+        'Operating System :: Microsoft :: Windows',
+        'Framework :: AsyncIO',
     ],
+    project_urls={
+        'GitHub: issues': 'https://github.com/py-paulo/aiowatcher/issues',
+        'GitHub: repo': 'https://github.com/py-paulo/aiowatcher',
+    },
     python_requires='>=3.6',
     install_requires=["aiofile~=3.1.0"],
 )

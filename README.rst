@@ -1,20 +1,55 @@
 AIOWatcher
 ==========
 
-.. image:: https://img.shields.io/github/languages/code-size/py-paulo/aiowatcher   :alt: GitHub code size in bytes
+.. image:: https://i.pinimg.com/originals/1b/2a/2a/1b2a2a3a94cae52f318e1893303a0834.png
+   :height: 126px
+   :width: 256px
+   :alt: aiowatcher logo
 
-.. image:: https://img.shields.io/github/license/py-paulo/aiowatcher   :alt: GitHub
+|
 
-Library to "watch" files in a directory and call a callback function (file name, lines) every time one of the files being monitored is recorded, in real time.
+.. image:: https://img.shields.io/github/repo-size/py-paulo/aiowatcher 
+    :target: https://img.shields.io/github/repo-size/py-paulo/aiowatcher
+    :alt: GitHub repo size
 
-Practically speaking, this can be compared to `tail -F *.log` UNIX command, but instead of having lines printed to stdout a python function gets called.
+.. image:: https://img.shields.io/pypi/v/AIOWatcher
+    :target: https://img.shields.io/pypi/v/aiowatcher
+    :alt: PyPI
 
-Similarly to tail, it takes care of "watching" new files which are created after initialization and "unwatching" those ones which are removed in the meantime. This means you'll be able to "follow" and support also rotating log files.
+.. image:: https://img.shields.io/pypi/wheel/aiowatcher
+    :target: https://img.shields.io/pypi/wheel/aiowatcher
+    :alt: PyPI - Wheel
 
-Code examples
--------------
+.. image:: https://img.shields.io/github/license/py-paulo/aiowatcher   
+    :target: https://img.shields.io/github/license/py-paulo/aiowatcher
+    :alt: GitHub
 
-All code examples requires python 3.6+.
+.. image:: https://img.shields.io/github/last-commit/py-paulo/aiowatcher
+    :target: https://img.shields.io/github/last-commit/py-paulo/aiowatcher
+    :alt: GitHub last commit
+
+Biblioteca para "observar" os arquivos de um diretório e chamar uma 
+função de callback `(filename, lines)` toda vez que um dos arquivos monitorados for gravado, em tempo real.
+
+Em termos práticos, isso pode ser comparado ao comando `tail -F * .log` do UNIX, 
+mas em vez de ter linhas impressas no stdout, uma função Python é chamada.
+
+Da mesma forma que o tail, ele se encarrega de "observar" os novos arquivos que são 
+criados após a inicialização e "desbloquear" aqueles que são removidos nesse meio tempo. 
+Isso significa que você será capaz de "seguir" e suportar também arquivos de log rotativos.
+
+Key Features
+============
+
+- Utiliza Asyncio para leitura e monitoramento assincrono.
+- A implementação escolhe automaticamente dependendo da compatibilidade do sistema.
+- Monitoramento de diversos arquivos em um mesmo diretório ou apenas de um.
+- Função `callback` assincrona.
+
+Getting started
+---------------
+
+Todos os exemplos de código requerem Python 3.6+.
 
 Basic Usage
 +++++++++++
@@ -57,3 +92,14 @@ Non blocking
     loop.run_until_complete(main())
 
 
+License
+=======
+
+``aiowatcher`` é oferecido sob a licença Apache 2.
+
+
+Source code
+===========
+
+A versão mais recente do desenvolvedor está disponível em um repositório GitHub:
+https://github.com/py-paulo/aiowatcher.git
