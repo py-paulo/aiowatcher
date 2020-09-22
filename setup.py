@@ -4,8 +4,6 @@ from os import path
 import sys
 import pathlib
 
-from setuptools import setup, Extension
-
 
 if sys.version_info < (3, 6):
     raise RuntimeError("aiohttp 4.x requires Python 3.6+")
@@ -19,6 +17,9 @@ module = SourceFileLoader(
 
 libraries = []
 
+def read(f):
+    return (HERE / f).read_text('utf-8').strip()
+
 setuptools.setup(
     name="aiowatcher",
     version=module.__version__,
@@ -29,9 +30,11 @@ setuptools.setup(
     author_email=module.team_email,
     keywords=["aio", "python", "asyncio", "fileio", "io"],
     provides=["aiowatcher"],
-    long_description=open("README.rst").read(),
+    long_description='\n\n'.join((read('README.md'), read('CHANGES.md'))),
+    long_description_content_type='text/markdown',
     url="https://github.com/py-paulo/aiowatcher.git",
     classifiers=[
+        "Environment :: Console",
         "Programming Language :: Python :: 3",
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
