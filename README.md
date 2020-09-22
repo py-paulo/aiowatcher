@@ -13,8 +13,6 @@
     <img alt="GitHub" src="https://img.shields.io/github/license/py-paulo/aiowatcher">
 </p>
 
-<h1 align="center" valign="middle">AIOWatcher</h1>
-
 ---
 
 Library to "watch" files in a directory and call a
